@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: to_be_replaced
+  repository: ghcr.io/butterfly1924/django-test-demo@sha256:beb982a73a8cc8d8644c705eb53715b45af1103f6b1094298793f495d133a907
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: latest
