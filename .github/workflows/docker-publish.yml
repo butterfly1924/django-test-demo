@@ -29,7 +29,7 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
       # This is used to complete the identity challenge
       # with sigstore/fulcio when running outside of PRs.
@@ -96,7 +96,6 @@ jobs:
 
       - name: Update Version
         run: |
-            git_hash=$(git rev-parse --short "$GITHUB_SHA")
             repository=$(cat ./charts/django-demo/values.yaml | grep repository: | awk '{print $2}')
             sed -i "s#$repository#${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-and-push.outputs.digest }}#" ./charts/django-demo/values.yaml
             
