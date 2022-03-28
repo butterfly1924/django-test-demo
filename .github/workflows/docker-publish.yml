@@ -6,6 +6,8 @@ name: Build
 # documentation.
 
 on:
+  workflow_dispatch:
+    
   schedule:
     - cron: '33 1 * * *'
   push:
