@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/butterfly1924/django-test-demo
+  repository: bardolphshampine77769/django-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: main
+  tag: 456f603
 
 imagePullSecrets: []
 nameOverride: 
