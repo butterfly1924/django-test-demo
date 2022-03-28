@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: bardolphshampine77769/django-demo
-  pullPolicy: IfNotPresent
+  repository: to_be_replaced
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 9a0c349
+  tag: latest
 
 imagePullSecrets: []
 nameOverride: 
