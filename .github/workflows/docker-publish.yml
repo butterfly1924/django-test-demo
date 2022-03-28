@@ -96,7 +96,7 @@ jobs:
         run: |
             git_hash=$(git rev-parse --short "$GITHUB_SHA")
             repository=$(cat ./charts/django-demo/values.yaml | grep repository: | awk '{print $2}')
-            sed -i "s/$repository/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-and-push.outputs.digest }}/" ./charts/django-demo/values.yaml
+            sed -i "s#$repository#${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-and-push.outputs.digest }}#" ./charts/django-demo/values.yaml
             
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@v0.3
