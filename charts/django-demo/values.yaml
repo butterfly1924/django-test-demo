@@ -8,7 +8,7 @@ image:
   repository: bardolphshampine77769/django-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: b967f27
+  tag: 2d9391b
 
 imagePullSecrets: []
 nameOverride: 
@@ -42,7 +42,7 @@ service:
 
 ingress:
   enabled: false
-  className: b967f27
+  className: 2d9391b
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
