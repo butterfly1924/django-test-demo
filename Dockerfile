@@ -6,7 +6,6 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN mkdir -p /opt/app
-RUN mkdir -p /opt/app/pip_cache
 RUN mkdir -p /opt/app/demo
 COPY requirements.txt start-server.sh /opt/app/
 COPY demo /opt/app/demo/
