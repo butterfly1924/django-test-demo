@@ -97,8 +97,10 @@ jobs:
       - name: Update Version
         run: |
             repository=$(cat ./charts/django-demo/values.yaml | grep repository: | awk '{print $2}')
-            sed -i "s#$repository#${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build-and-push.outputs.digest }}#" ./charts/django-demo/values.yaml
-            
+            tag=$(cat ./charts/django-demo/values.yaml | grep tag: | awk '{print $2}')
+            sed -i "s#$repository#${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}#" ./charts/django-demo/values.yaml
+            sed -i "s#$tag#main#" ./charts/django-demo/values.yaml
+
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@v0.3
         with:
