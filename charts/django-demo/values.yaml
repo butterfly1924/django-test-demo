@@ -8,7 +8,7 @@ image:
   repository: bardolphshampine77769/django-demo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 456f603
+  tag: cd9d39a
 
 imagePullSecrets: []
 nameOverride: 
